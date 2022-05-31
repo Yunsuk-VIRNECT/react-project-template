@@ -3,6 +3,7 @@ import "./App.scss";
 import axios from "axios";
 import ConfigContext from "contexts/configContext";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 import logo from "../logo.svg";
@@ -14,6 +15,7 @@ const Button = styled.button`
 `;
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [configUrl, setConfigUrl] = useState({});
 
   const fetchConfigUrl = async () => {
@@ -34,9 +36,10 @@ function App() {
 
   return (
     <ConfigContext.Provider value={configUrl}>
-      <div className="App">
-        <img className="App-logo" src={logo} alt="logo" />
+      <div className="app">
+        <img className="app-logo" src={logo} alt="logo" />
         <p>test paragraph</p>
+        <p>{t("test.tt")}</p>
         <Test />
         <Button>Test Button</Button>
       </div>
