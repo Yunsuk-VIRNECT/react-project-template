@@ -1,11 +1,22 @@
 {
   "name": "web-squars-studio-client",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
     "build": "tsc && vite build",
+    "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{css,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --write"
+    ],
+    "package.json": "npx sort-package-json"
   },
   "dependencies": {
     "axios": "^0.27.0",
@@ -36,6 +47,8 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.5.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.3",
     "postcss": "^8.4.5",
     "postcss-import": "^14.1.0",
     "prettier": "^2.6.2",
