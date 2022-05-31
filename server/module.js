@@ -67,8 +67,8 @@ const ServerModule = (() => {
       process.on("uncaughtException", onProcessError);
 
       const options = {
-        key: fs.readFileSync(path.join("./ssl/virnect.key")),
-        cert: fs.readFileSync(path.join("./ssl/virnect.crt")),
+        key: fs.readFileSync(path.join("src/ssl/virnect.key")),
+        cert: fs.readFileSync(path.join("src/ssl/virnect.crt")),
       };
 
       try {
