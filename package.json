@@ -1,7 +1,7 @@
 {
   "name": "web-squars-studio-client",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "start": "node server.js",
     "start:local": "cross-env VIRNECT_ENV=develop CONFIG_SERVER=http://10.200.0.21:6383 node server.js",
@@ -9,7 +9,19 @@
     "build": "tsc && vite build",
     "test:unit": "jest --watchAll",
     "test:unit:coverage": "jest --silent --watchAll=false --coverage",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "prepare": "husky install",
     "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{css,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --write"
+    ],
+    "package.json": "npx sort-package-json"
   },
   "dependencies": {
     "@types/node": "^17.0.22",
@@ -48,6 +60,8 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.5.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.3",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
     "jest-sonar": "^0.2.12",
