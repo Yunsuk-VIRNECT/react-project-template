@@ -3,18 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "start": "node server.js",
     "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/node": "^17.0.22",
+    "@virnect/logger": "^1.0.2",
     "axios": "^0.27.0",
     "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "express": "^4.18.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.22",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.25",
