@@ -3,7 +3,7 @@ import fs from "fs";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 
-import { initConfigUrlServer } from "./server/configServer";
+import initConfigUrlServer from "./server/configServer.js";
 
 // https://vitejs.dev/config/
 export default defineConfig({
