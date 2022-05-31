@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server.js",
+    "start:local": "cross-env VIRNECT_ENV=develop CONFIG_SERVER=http://10.200.0.21:6383 node server.js",
     "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
     "build": "tsc && vite build",
     "test:unit": "jest --watchAll",
