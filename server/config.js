@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 
 const env = process.env.VIRNECT_ENV;
 const configServer = process.env.CONFIG_SERVER;
@@ -39,11 +39,11 @@ async function getEnvConf() {
   );
 
   const property = res.data.propertySources[0].source;
-  for (const key in property) {
+  Object.keys(property).forEach(key => {
     if (key.includes("env.")) {
       envConfig[key.replace("env.", "")] = property[key];
     }
-  }
+  });
 }
 
 async function getUrlConf() {
@@ -52,18 +52,18 @@ async function getUrlConf() {
   );
 
   const property = res.data.propertySources[0].source;
-  for (const key in property) {
+  Object.keys(property).forEach(key => {
     urlConfig[key.replace("url.", "")] = property[key];
-  }
+  });
 
   if (env === "production") return;
 
-  Object.entries(renewalUrls).map(([key, v]) => {
+  Object.entries(renewalUrls).forEach(([key, v]) => {
     urlConfig[key] = v;
   });
 }
 
-export default {
+module.exports = {
   async init() {
     await Promise.all([getEnvConf(), getUrlConf()]);
   },

@@ -1,8 +1,8 @@
 import bodyParser from "body-parser";
 
-import config from "./config";
+import config from "./config.js";
 
-export const initConfigUrlServer = () => ({
+export default () => ({
   name: "configure-server",
   configureServer(server) {
     server.middlewares.use(
