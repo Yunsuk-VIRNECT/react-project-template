@@ -1,19 +1,19 @@
 import "./App.scss";
 
 import axios from "axios";
+import ConfigContext from "contexts/configContext";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import ConfigContext from "../contexts/configContext";
 import logo from "../logo.svg";
 import Test from "./Test";
 
-function App() {
-  const Button = styled.button`
-    background: orange;
-    color: black;
-  `;
+const Button = styled.button`
+  background: orange;
+  color: black;
+`;
 
+function App() {
   const [configUrl, setConfigUrl] = useState({});
 
   const fetchConfigUrl = async () => {
@@ -36,7 +36,7 @@ function App() {
     <ConfigContext.Provider value={configUrl}>
       <div className="App">
         <img className="App-logo" src={logo} alt="logo" />
-        <p>test</p>
+        <p>test paragraph</p>
         <Test />
         <Button>Test Button</Button>
       </div>
