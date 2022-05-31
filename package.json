@@ -6,6 +6,8 @@
     "start": "node server.js",
     "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
     "build": "tsc && vite build",
+    "test:unit": "jest --watchAll",
+    "test:unit:coverage": "jest --silent --watchAll=false --coverage",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,6 +21,11 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/react-hooks": "^8.0.0",
+    "@testing-library/user-event": "^14.2.0",
+    "@types/jest": "^27.5.1",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.25",
@@ -40,11 +47,15 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.5.1",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "jest-sonar": "^0.2.12",
     "postcss": "^8.4.5",
     "postcss-import": "^14.1.0",
     "prettier": "^2.6.2",
     "sass": "^1.52.1",
     "styled-components": "^5.3.5",
+    "ts-jest": "^28.0.3",
     "typescript": "^4.6.3",
     "vite": "^2.9.9"
   }
