@@ -3,15 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "start:local": "cross-env VIRNECT_ENV=develop CONFIG_SERVER=http://10.200.0.21:6383 node server.js",
-    "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
     "build": "tsc && vite build",
-    "test:unit": "jest --watchAll",
-    "test:unit:coverage": "jest --silent --watchAll=false --coverage",
+    "dev": "cross-env CONFIG_SERVER=http://10.200.0.21:6383 VIRNECT_ENV=local NODE_ENV=local vite --host",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "prepare": "husky install",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js",
+    "start:local": "cross-env VIRNECT_ENV=develop CONFIG_SERVER=http://10.200.0.21:6383 node server.js",
+    "stylelint:scss": "stylelint --ignore-path .gitignore '**/*.scss'",
+    "stylelint:tsx": "stylelint --ignore-path .gitignore '**/*.tsx'",
+    "test:unit": "jest --watchAll",
+    "test:unit:coverage": "jest --silent --watchAll=false --coverage"
   },
   "lint-staged": {
     "*.{css,md,json}": [
@@ -19,7 +21,11 @@
     ],
     "*.ts?(x)": [
       "eslint",
+      "stylelint:tsx",
       "prettier --write"
+    ],
+    "*.scss": [
+      "stylelint:scss"
     ],
     "package.json": "npx sort-package-json"
   },
@@ -34,6 +40,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.0",
@@ -60,14 +67,15 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.5.1",
-    "i18next": "^21.8.5",
     "husky": "^8.0.1",
-    "lint-staged": "^12.4.3",
+    "i18next": "^21.8.5",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
     "jest-sonar": "^0.2.12",
+    "lint-staged": "^12.4.3",
     "postcss": "^8.4.5",
     "postcss-import": "^14.1.0",
+    "postcss-syntax": "^0.36.2",
     "prettier": "^2.6.2",
     "react-i18next": "^11.16.9",
     "sass": "^1.52.1",

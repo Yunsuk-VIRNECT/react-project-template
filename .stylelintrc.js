@@ -10,4 +10,10 @@ module.exports = {
     "max-nesting-depth": 2,
     "no-descending-specificity": null
   },
+  overrides: [
+    {
+      "files": ["**/*.tsx"],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ]
 };
