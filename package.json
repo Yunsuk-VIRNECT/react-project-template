@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "start": "node server.js",
     "start:local": "cross-env VIRNECT_ENV=develop CONFIG_SERVER=http://10.200.0.21:6383 node server.js",
-    "stylelint:scss": "stylelint --ignore-path .gitignore '**/*.scss'",
-    "stylelint:tsx": "stylelint --ignore-path .gitignore '**/*.tsx'",
+    "stylelint:scss": "stylelint --ignore-path .gitignore **/*.scss",
+    "stylelint:tsx": "stylelint --ignore-path .gitignore **/*.tsx",
     "test:unit": "jest --watchAll",
     "test:unit:coverage": "jest --silent --watchAll=false --coverage"
   },
