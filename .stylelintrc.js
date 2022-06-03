@@ -8,7 +8,8 @@ module.exports = {
     "order/properties-order": [[], { severity: 'warning' }],
     "plugin/rational-order": [true, {}],
     "max-nesting-depth": 2,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "no-empty-first-line": null
   },
   overrides: [
     {
