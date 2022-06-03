@@ -15,7 +15,7 @@ const Button = styled.button`
 `;
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [configUrl, setConfigUrl] = useState({});
 
   const fetchConfigUrl = async () => {

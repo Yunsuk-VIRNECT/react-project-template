@@ -23,4 +23,11 @@ module.exports = {
 
   // //@virnect/platform-auth module은 jest가 무시하도록 설정
   transformIgnorePatterns: ['node_modules/(?!@virnect/platform-auth/.*)'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  globals: {
+    "ts-jest": {
+      babelConfig: require('./babel.test.config.js'),
+      useESM: true
+    }
+  }
 }
