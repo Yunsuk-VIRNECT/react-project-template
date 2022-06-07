@@ -19,20 +19,20 @@
     "simple-import-sort" // Plugin for sorting imports in file.
   ],
   "rules": {
-    "prettier/prettier": ["error",{"endOfLine": "auto"}],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/first": "warn",
     "import/newline-after-import": "warn",
     "import/no-duplicates": "error",
     "import/no-named-as-default-member": "off",
-    "import/extensions":[
+    "import/extensions": [
       "error",
       "ignorePackages",
       {
-        "ts":"never",
-        "tsx":"never"
+        "ts": "never",
+        "tsx": "never"
       }
     ],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",
     "react/prop-types": "off",
@@ -47,7 +47,8 @@
         "noSortAlphabetically": true
       }
     ],
-    "react/jsx-filename-extension":["warn",{"extensions":[".tsx"]}]
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "no-param-reassign": ["error", { "props": false }]
   },
   "env": {
     "es6": true, // enable ES2015 features.
