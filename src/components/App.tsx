@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
+import Counter from "@/components/counter/Counter";
+
 import logo from "../logo.svg";
 import Test from "./Test";
 
 const Button = styled.button`
-  background: orange;
   color: black;
+  background: orange;
 `;
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
         <p>{t("test.tt")}</p>
         <Test />
         <Button>Test Button</Button>
+        <Counter />
       </div>
     </ConfigContext.Provider>
   );
