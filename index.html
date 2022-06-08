@@ -2,11 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Squars Studio</title>
   </head>
   <body>
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+
+    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.6/dist/ffmpeg.min.js" defer></script>
+
+    <script src="/libs/draco/draco_encoder.js"></script>
+
+    <link rel="stylesheet" href="/libs/codemirror/codemirror.css">
+		<link rel="stylesheet" href="/libs/codemirror/theme/monokai.css">
+
+    <script src="/libs/codemirror/codemirror.js"></script>
+		<script src="/libs/codemirror/mode/javascript.js"></script>
+		<script src="/libs/codemirror/mode/glsl.js"></script>
+
+    <script src="/libs/esprima.js"></script>
+		<script src="/libs/jsonlint.js"></script>
+
+    <link rel="stylesheet" href="/libs/codemirror/addon/dialog.css">
+		<link rel="stylesheet" href="/libs/codemirror/addon/show-hint.css">
+		<link rel="stylesheet" href="/libs/codemirror/addon/tern.css">
+
+    <script src="/libs/codemirror/addon/dialog.js"></script>
+		<script src="/libs/codemirror/addon/show-hint.js"></script>
+		<script src="/libs/codemirror/addon/tern.js"></script>
+		<script src="/libs/acorn/acorn.js"></script>
+		<script src="/libs/acorn/acorn_loose.js"></script>
+		<script src="/libs/acorn/walk.js"></script>
+		<script src="/libs/ternjs/polyfill.js"></script>
+		<script src="/libs/ternjs/signal.js"></script>
+		<script src="/libs/ternjs/tern.js"></script>
+		<script src="/libs/ternjs/def.js"></script>
+		<script src="/libs/ternjs/comment.js"></script>
+		<script src="/libs/ternjs/infer.js"></script>
+		<script src="/libs/ternjs/doc_comment.js"></script>
+		<script src="/libs/tern-threejs/threejs.js"></script>
+		<script src="/libs/signals.min.js"></script>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

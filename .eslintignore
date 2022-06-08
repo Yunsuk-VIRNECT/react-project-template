@@ -10,3 +10,6 @@ commitlint.config.js
 jest.config.js
 postcss.config.js
 *.d.ts
+
+# three.js files
+src/assets/threejs/
